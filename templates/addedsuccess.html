@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Added to Cart</title>
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .cart-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: lightsteelblue;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .cart-container h1 {
+            
+            margin: 0;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 24px;
+        }
+
+        .cart-container p {
+            
+            margin: 10px 0 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .cart-container i {
+            font-size: 50px;
+            color: green;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .butto-52 {
+            background-color: #007bff;
+        }
+
+        .butto-52:hover {
+            background-color: #0056b3;
+        }
+
+        .button-secondary {
+            background-color: #28a745;
+        }
+
+        .button-secondary:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <i class="fas fa-check-circle"></i>
+        <h1>Item Added to Cart</h1>
+        <p>Your item has been successfully added to your shopping cart.</p>
+        <div class="button-container">
+            <a href="{{url_for('Welcome')}}" class="butto-52">Go to Home</a>
+            <a href="{{url_for('viewcart')}}" class="button-secondary">View Cart</a>
+        </div>
+    </div>
+</body>
+</html>

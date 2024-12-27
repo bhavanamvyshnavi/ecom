@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Table</title>
+    <style>
+        /* General table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        /* Table headers */
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Table rows and cells */
+        td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        /* Zebra striping for rows */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Hover effect */
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Add spacing between rows */
+        tr {
+            transition: background-color 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>OID</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{ i[0] }}</td>
+            <td>{{ i[2] }}</td>
+            <td>{{ i[3] }}</td>
+            <td>{{ i[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

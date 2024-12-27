@@ -1,0 +1,34 @@
+<table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
+    <thead>
+        <tr style="background-color: #f4f4f4;">
+            <th style="padding: 10px; border: 1px solid #ddd;">Image</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Name</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Category</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Price</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Quantity</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Total</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for key, value in items.items() %}
+        <tr style="text-align: center; {% if loop.index0 % 2 == 0 %} background-color: #f9f9f9; {% else %} background-color: #fff; {% endif %}">
+            <td style="padding: 10px; border: 1px solid #ddd;">
+                <img src="{{ url_for('static', filename=value[3]+'.jpg') }}" alt="{{ value[0] }}" style="width: 60px; height: auto; border-radius: 5px;">
+            </td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ value[0] }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ value[4] }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">₹{{ value[1] }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ value[2] }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">₹{{ value[1] | int * value[2] }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">
+                <a href="{{ url_for('cartpop', itemid=key) }}" style="text-decoration: none;">
+                    <button style="padding: 5px 10px; background-color: #ff4d4d; color: white; border: none; border-radius: 3px; cursor: pointer;">
+                        Remove
+                    </button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
